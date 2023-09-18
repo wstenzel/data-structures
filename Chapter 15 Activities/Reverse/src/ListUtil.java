@@ -1,4 +1,3 @@
-import java.util.LinkedList;
 import java.util.*;
 
 /**
@@ -14,6 +13,30 @@ public class ListUtil
     public static void reverse(LinkedList<String> strings)
     {
         int lengthSad = 0;
-        while()
+        for(String b : strings)
+        {
+            lengthSad++;
+        }
+
+        int lengthSadsLongLostSon = lengthSad +1;
+        String[] ahray = new String[lengthSadsLongLostSon];
+
+        int g = lengthSad;
+        ListIterator<String> mmm = strings.listIterator();
+        while(mmm.hasNext())
+        {
+            String b = mmm.next();
+            ahray[g]=b;
+            g--;
+            mmm.remove();
+        }
+
+        for(int i = lengthSad; i>=0; i--)
+        {
+            strings.addFirst(ahray[i]);
+        }
+
+        System.out.println(strings);
+        
     }
 }
