@@ -55,10 +55,11 @@ public class SudokuSolver {
             Set<Integer> colSet = new HashSet<>();
             for(int b = 0; b<N; b++)
             {
-                colSet.add(grid[a][b]);
+                colSet.add(grid[b][a]);
             }
             this.cols.add(colSet);
         }
+
 
         // create the list of sets for each square (this.squares)
         /* the squares are added to the list row-by-row:
@@ -87,7 +88,17 @@ public class SudokuSolver {
         }
 
         // create a hash set for [1..9] (this.nums)
-        // ...
+        this.nums = new HashSet<Integer>();
+        this.nums.add(1);
+        this.nums.add(2);
+        this.nums.add(3);
+        this.nums.add(4);
+        this.nums.add(5);
+        this.nums.add(6);
+        this.nums.add(7);
+        this.nums.add(8);
+        this.nums.add(9);
+
 
         // visually inspect that all the sets are correct
         for (int row = 0; row < N; row++) {
@@ -134,7 +145,12 @@ public class SudokuSolver {
         Set<Integer> possibleNums = new HashSet<Integer>();
         possibleNums.addAll(this.nums);
         
-        // ...
+        Set<Integer> possibleNums = new HashSet<Integer>();
+        possibleNums.addAll(this.nums);
+        
+        Set<Integer> row = new Set(rows[nextRow]);
+        Set<Integer> col  = new Set(cols[nextCol]);
+        //Set<Integer> 
 
         // if there are no possible numbers, we cannot solve the board in its current state
         if (possibleNums.isEmpty()) {
