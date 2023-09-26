@@ -61,6 +61,7 @@ public class SudokuSolver {
         }
 
 
+
         // create the list of sets for each square (this.squares)
         /* the squares are added to the list row-by-row:
             0 1 2
