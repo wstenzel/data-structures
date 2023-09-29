@@ -18,17 +18,17 @@ public class FirstLetterMap
         {
 
             // Create your map here
-            ...
+            Map<Character, Set<String>> letMap = new TreeMap<>(); 
 
             while (in.hasNext())
             {
                 String word = clean(in.next());
                 Character c = word.charAt(0);
+                Set<String> set2 = new HashSet<>();
 
                 // Update the map here
                 // Modify Worked Example 15.1
-                . . .
-
+                
 
             }
 

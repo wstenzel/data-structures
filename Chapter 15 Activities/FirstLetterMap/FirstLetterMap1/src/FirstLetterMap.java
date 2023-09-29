@@ -17,23 +17,24 @@ public class FirstLetterMap
         try (Scanner in = new Scanner(new File(filename)))
         {
 
-            // Create your map here
-            ...
+            Map<Character, Set<String>> letMap = new TreeMap<>(); 
+            
 
             while (in.hasNext())
             {
                 String word = clean(in.next());
                 Character c = word.charAt(0);
+                Set<String> letSet = new HashSet<String>();
 
                 // Update the map here
                 // Use the Java 8 merge method
-                . . .
+                letMap.merge(c, letSet, (val1, val2)-> val1+val2);
 
             }
 
             // Print the map here in this form
             // a: [a, able, aardvark]
-            . . .
+            //
         } catch (FileNotFoundException e)
         {
             System.out.println("Cannot open: " + filename);
