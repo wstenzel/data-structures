@@ -28,7 +28,7 @@ public class FirstLetterMap
 
                 // Update the map here
                 // Use the Java 8 merge method
-                letMap.merge(c, letSet, (val1, val2)-> val1+val2);
+                letMap.merge(c, letSet, (val1, val2)-> val2.add(val1));
 
             }
 

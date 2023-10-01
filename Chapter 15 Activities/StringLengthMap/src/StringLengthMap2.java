@@ -18,7 +18,7 @@ public class StringLengthMap2
         {
 
             // Create your map here
-            
+            Map<Integer, String> wordMap = new TreeMap<>();
 
             while (in.hasNext())
             {
@@ -27,13 +27,20 @@ public class StringLengthMap2
 
                 // Update the map here
                 // Use the Java 8 merge() method
-                
+                wordMap.put(len, word);
+                wordMap.merge(len, word, (val1, val2)-> val1+", "+val2);
 
 
             }
 
             // Print the strings, in increasing order of their length
             // Use this format: 1: i, a, i
+            Set<Integer> keys = wordMap.keySet();
+            for(Integer key : keys)
+            {
+                System.out.println(key+" ("+key.hashCode()+"):" + wordMap.get(key));
+            }
+
         } catch (FileNotFoundException e)
         {
             System.out.println("Cannot open: " + filename);

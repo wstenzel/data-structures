@@ -17,8 +17,7 @@ public class StringLengthMap
         try (Scanner in = new Scanner(new File(filename)))
         {
 
-            Map<Integer, String> wordMap = new HashMap<>();
-            
+            Map<Integer, String> wordMap = new TreeMap<>();
 
             while (in.hasNext())
             {
@@ -27,15 +26,22 @@ public class StringLengthMap
 
                 // Update the map here
                 // Modify Worked Example 15.1
-                wordMap.put(len, word);
-                wordMap.merge(len, word, (val1, val2)-> val1+", "+val2);
-
+                if(wordMap.containsKey(len))
+                {
+                    wordMap.put(len, wordMap.get(len)+", "+word);
+                }
+                
 
 
             }
+            Set<Integer> keys = wordMap.keySet();
+            for(Integer key : keys)
+            {
+                System.out.println(key+" ("+key.hashCode()+"):" + wordMap.get(key));
+            }
 
-            // Print the strings, in increasing order of their length
-            // Use this format: 1: i, a, i
+
+            
 
         } catch (FileNotFoundException e)
         {
