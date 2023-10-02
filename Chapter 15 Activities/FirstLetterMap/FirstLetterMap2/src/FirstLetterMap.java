@@ -28,13 +28,22 @@ public class FirstLetterMap
 
                 // Update the map here
                 // Modify Worked Example 15.1
-                
+                if(letMap.containsKey(c))
+                {
+                    letMap.get(c).add(word);
+                    letMap.put(c, set2);
+                }
 
             }
 
             // Print the map here in this form
             // a: [a, able, aardvark]
-            . . .
+            Set<Character> keys = letMap.keySet();
+            for(Character key : keys)
+            {
+                System.out.println(key+" ("+key.hashCode()+"):" + letMap.get(key));
+            }
+
         } catch (FileNotFoundException e)
         {
             System.out.println("Cannot open: " + filename);

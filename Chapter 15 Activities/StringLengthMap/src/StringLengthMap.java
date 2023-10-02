@@ -30,6 +30,10 @@ public class StringLengthMap
                 {
                     wordMap.put(len, wordMap.get(len)+", "+word);
                 }
+                else
+                {
+                    wordMap.put(len,word);
+                }
                 
 
 
