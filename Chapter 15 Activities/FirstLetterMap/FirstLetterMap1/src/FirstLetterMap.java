@@ -28,13 +28,17 @@ public class FirstLetterMap
 
                 // Update the map here
                 // Use the Java 8 merge method
-                letMap.merge(c, letSet, (val1, val2)-> val2.add(val1));
+                letMap.merge(c, letSet, (val1, val2)-> letSet.add(val2));
 
             }
 
             // Print the map here in this form
             // a: [a, able, aardvark]
-            //
+            Set<Character> keys = letMap.keySet();
+            for(Character key : keys)
+            {
+                System.out.println(key+" ("+key.hashCode()+"):" + letMap.get(key));
+            }
         } catch (FileNotFoundException e)
         {
             System.out.println("Cannot open: " + filename);
