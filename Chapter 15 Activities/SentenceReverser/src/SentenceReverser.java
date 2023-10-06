@@ -15,14 +15,34 @@ public class SentenceReverser
     public static String reverse(String sentence)
     {
     	Scanner scanner = new Scanner(sentence);
-    	
-        // Complete this method. Use a Stack.
-        ...
+    	Stack<String> words = new Stack<>();
+        String newSentance = new String();
+        Stack<String> temp = new Stack<>();
+        int i = 0;
+        while(scanner.hasNext())
+        {
+            String word = scanner.next();
 
 
-
-
-
-
+            
+            if(!word.equals("."))
+            {
+                words.push(word);
+                
+            }
+            //if(word.equals("."))
+           // {
+             
+            //}
+            i++;
+            
+        }
+        
+        while(i>0)
+        {
+            newSentance+=words.pop()+" ";
+            i--;
+        }
+        return newSentance;
     }
 }
