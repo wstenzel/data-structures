@@ -72,14 +72,15 @@ public class ToDoList
     */
     public void nextTask()
     {
+    
         Task next = null;
         
         // Complete this method
-        next = new Task();
-        toDo.remove();
+    
         
         
-        if (next == null)
+        
+        if (toDo.size()>0)
         {
             System.out.println("There are no tasks in the list.");
         } else

@@ -22,20 +22,22 @@ public class SentenceReverser
         while(scanner.hasNext())
         {
             String word = scanner.next();
-
-
-            
-            if(!word.equals("."))
+            if(word.contains("."))
             {
+                word=word.substring(0, word.length()-1);
                 words.push(word);
-                
+                while(i>-1)
+                {
+                    newSentance+=words.pop()+" ";
+                    i--;
+                }
+                newSentance+=". ";
+                i++;
             }
-            //if(word.equals("."))
-           // {
-             
-            //}
-            i++;
-            
+            else{
+                words.push(word);
+                i++;
+            }
         }
         
         while(i>0)
