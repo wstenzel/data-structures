@@ -13,7 +13,7 @@ import java.util.Scanner;
 public class ToDoList
 {
     // Instance variable(s)
-    Queue<WorkOrder> toDo;
+    Queue<Task> toDo;
 
     /**
      * Constructor
@@ -61,7 +61,7 @@ public class ToDoList
     public void addTask(String optionStr)
     {
         // Complete this method
-        toDo.add(new WorkOrder(Integer.parseInt(optionStr.substring(4,5)), optionStr.substring(6)));
+        toDo.add(new Task(Integer.parseInt(optionStr.substring(4,5)), optionStr.substring(6)));
             
             
     }
@@ -77,7 +77,10 @@ public class ToDoList
         
         // Complete this method
     
-        
+        if(toDo.size()>0)
+        {
+            next=toDo.remove();
+        }
         
         
         if (toDo.size()>0)

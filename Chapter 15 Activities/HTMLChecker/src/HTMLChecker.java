@@ -17,19 +17,37 @@ public class HTMLChecker
 {
     public static void main(String[] args)
     {
-        String filename = "src/TagSample1.html";
-
+        String filename = "Chapter 15 Activities/HTMLChecker/src/TagSample1.html";
+        //String tags = "";
+        Stack<String> tags = new Stack<>();
         try (Scanner in = new Scanner(new File(filename)))
         {
             while(in.hasNext())
             {
-                
+                String tag = in.next();
+                tags.push(tag);
             }
-
-
+            //System.out.println(tags);
         } catch (FileNotFoundException e)
         {
             System.out.println("Cannot open: " + filename);
+        }
+        String openTag ="";
+        String closeTab ="";
+        for(String a: tags)
+        {
+            
+            if(a.contains("/"))
+            {
+                closeTab=a;
+            }
+            else{
+                openTag = a;
+            }
+            if(openTag.substring(1)!= closeTab.substring(2))
+            {
+                System.out.println("It doesnt work");
+            }
         }
 
     }
