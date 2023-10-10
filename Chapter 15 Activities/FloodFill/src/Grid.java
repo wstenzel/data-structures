@@ -13,12 +13,33 @@ public class Grid
     {
         stacky = new Stack<>();
         stacky.push(new Pair(3,4));
+        int c = 1;
         while(!stacky.isEmpty())
         {   
-            int c = 1;
-            if(pixels[stacky.pop().getRow()][stacky.pop().getColumn()]==0)
+            
+            Pair p = stacky.pop();
+            int p1= p.getRow();
+            int p2= p.getColumn();
+            if(pixels[p1][p2]==0)
             {
-                
+                pixels[p1][p2]=c;
+                c++;
+            }
+            if(p1-1>=0)
+            {
+                stacky.push(new Pair(p1-1, p2));
+            }
+            else if(p2+1<10)
+            {
+                stacky.push(new Pair(p1, p2+1));
+            }
+            else if(p1+1<10)
+            {
+                stacky.push(new Pair(p1+1, p2));
+            }
+            else if(p2-1>=0)
+            {
+                stacky.push(new Pair(p1, p2-1));
             }
         }
     }
