@@ -26,7 +26,11 @@ public class LinkedList
     */
     public int size()
     {
-        . . .
+        return size
+    }
+    public static int size()
+    {
+        
     }
 
 
