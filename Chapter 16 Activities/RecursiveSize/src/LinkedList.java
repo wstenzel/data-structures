@@ -26,11 +26,21 @@ public class LinkedList
     */
     public int size()
     {
-        return size
+        return sizeHelper();
     }
-    public static int size()
+    public static int sizeHelper()
     {
-        
+        int i = 0;
+        if(first!=null)
+        {
+            i++;
+            removeFirst();
+            sizeHelper();
+        }
+        else
+        {
+            return i;
+        }
     }
 
 
