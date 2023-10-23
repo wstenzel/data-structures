@@ -1,3 +1,6 @@
+
+import java.util.NoSuchElementException;
+
 /**
     Add a method lastToFirst to this implementation of a queue.
     The method moves the element at the tail of the queue
@@ -19,15 +22,24 @@ public class LinkedListQueue
 
     /**
         Moves the tail of the queue to the head.
+     * @throws WebSocketHandshakeException
     */
     public void lastToFirst()
     {
-        . . .
-
-
-
-
-
+        if(head==null)
+        {
+            throw new NoSuchElementException("LINDA");
+        }
+        Node temp = tail;
+        Node temp2 = head;
+        while(temp2.next!=tail)
+        {
+            temp2=temp2.next;
+        }
+        tail=temp2;
+        tail.next=null;
+        temp.next=head;
+        head=temp;
     }
 
     /**
