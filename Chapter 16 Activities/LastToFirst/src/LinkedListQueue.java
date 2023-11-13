@@ -26,9 +26,10 @@ public class LinkedListQueue
     */
     public void lastToFirst()
     {
+        
         if(head==null)
         {
-            throw new NoSuchElementException("LINDA");
+            //throw new NoSuchElementException("LINDA");
         }
         Node temp = tail;
         Node temp2 = head;
@@ -40,6 +41,7 @@ public class LinkedListQueue
         tail.next=null;
         temp.next=head;
         head=temp;
+        throw new NoSuchElementException("LINDA");
     }
 
     /**
