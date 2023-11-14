@@ -29,7 +29,7 @@ public class LinkedListQueue
         
         if(head==null)
         {
-            //throw new NoSuchElementException("LINDA");
+            throw new NoSuchElementException("LINDA YOU BURNT THE MEATLOAF!");
         }
         Node temp = tail;
         Node temp2 = head;
@@ -41,7 +41,7 @@ public class LinkedListQueue
         tail.next=null;
         temp.next=head;
         head=temp;
-        throw new NoSuchElementException("LINDA");
+        
     }
 
     /**

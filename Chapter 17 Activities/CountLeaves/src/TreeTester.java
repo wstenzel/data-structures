@@ -11,7 +11,7 @@ public class TreeTester
         t2.addSubtree(t4);
         System.out.println("Size: " + t1.size());
         System.out.println("Expected: 4");
-        System.out.println("Leaf count: " + t1.leafCount());
+        System.out.println("Leaf count: " + t1.countLeaves());
         System.out.println("Expected: 2");
     }
 }

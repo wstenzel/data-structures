@@ -64,4 +64,31 @@ public class Tree
     }
 
     // Additional methods will be added in later sections.
+
+    public int countLeaves()
+    {
+        if (root == null) { return 0; }
+        else
+        {
+            return countLeaves(root);
+        }
+    }
+
+    public int countLeaves(Node n)
+    {
+        if(n.children.size()==0)
+        {
+            return 1;
+        }
+        else
+        {
+            int sum = 0;
+            for(Node child : n.children)
+            {
+                sum+= countLeaves(child);
+            }
+            return sum;
+        }
+    }
+
 }
