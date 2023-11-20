@@ -83,7 +83,44 @@ public class MorseCode
      */
     private static void treeInsert(char letter, String code)
     {
-        
+        treeInsert(letter, code, decodeTree);
+
+    }
+
+    private static void treeInsert(char letter, String code, TreeNode node)
+    {
+        char symbol = code.charAt(0);
+        code = code.substring(1);
+        if(code.length()==0)
+        {
+            node.setValue(letter);
+        }
+        if(symbol == DOT)
+        {
+            TreeNode node2;
+            if(node.getLeft() == null)
+            {
+                node2 = new TreeNode("");
+            }
+            else
+            {
+                node2 = node.getLeft();
+            }
+            treeInsert(letter, code, node2);
+        }
+        else if(symbol == DASH)
+        {
+            TreeNode node2;
+            if(node.getRight() == null)
+            {
+                node2 = new TreeNode("");
+            }
+            else
+            {
+                node2 = node.getRight();
+            }
+            treeInsert(letter, code, node2);
+        }
     }
 
     /**
